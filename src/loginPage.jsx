@@ -16,29 +16,58 @@ const Container = styled.div`
 
 	box-shadow: 0px 8px 12px 6px rgba(139, 146, 162, 0.1), 0px 2px 3px rgba(139, 146, 162, 0.1);
 	border-radius: 4px;
-	/* display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center; */
 `;
 
 // const SignInBtn = styled.button`
-// 	position: absolute;
 // 	width: 344px;
 // 	height: 48px;
-// 	left: 583px;
-// 	top: 432px;
-//     background: #a239ff;
+// 	background: #a239ff;
 // 	border-radius: 100px;
+// 	border: 1px solid #a239ff;
+// 	margin: 12px auto;
+// 	box-sizing: border-box;
+// 	color: #fff;
 // `;
+
+const SignInBtn = styled.button`
+	width: 344px;
+	height: 48px;
+	background: #a239ff;
+	border-radius: 100px;
+	border: 1px solid #a239ff;
+	margin: 12px auto;
+	box-sizing: border-box;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 13px 64px 11px 48px;
+`;
+
+const SignInBtnText = styled.p`
+	width: 184px;
+	height: 20px;
+
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+
+	display: flex;
+	align-items: center;
+	justify-content:center;
+	letter-spacing: 0.1px;
+
+	color: #fff;
+`;
 const GoogleBtn = styled.button`
 	width: 344px;
 	height: 48px;
 	background: #ffffff;
 	border-radius: 100px;
 	border: 1px solid #757575;
+	margin: 12px auto;
 
-	margin: 10px auto;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
@@ -48,13 +77,12 @@ const GoogleBtn = styled.button`
 `;
 
 const FbBtn = styled.button`
-	display: block;
 	width: 344px;
 	height: 48px;
 	border-radius: 100px;
 	border: 1px solid #1877f2;
 	background: #1877f2;
-	margin: 10px auto;
+	margin: 12px auto;
 
 	display: flex;
 	justify-content: space-between;
@@ -63,12 +91,11 @@ const FbBtn = styled.button`
 	gap: 4px;
 `;
 const TwitterBtn = styled.button`
-	display: block;
 	width: 344px;
 	height: 48px;
 	border-radius: 100px;
 	background: #1b97f0;
-	margin: 10px auto;
+	margin: 12px auto;
 
 	display: flex;
 	justify-content: space-between;
@@ -78,12 +105,11 @@ const TwitterBtn = styled.button`
 `;
 
 const LinkedInBtn = styled.button`
-	display: block;
 	width: 344px;
 	height: 48px;
 	border-radius: 100px;
 	border: 1px solid #256cc2;
-	margin: 10px auto;
+	margin: 12px auto;
 
 	display: flex;
 	justify-content: space-between;
@@ -187,6 +213,8 @@ const SignUpBtn = styled.button`
 	border: 1px solid #a239ff;
 	border-radius: 100px;
 	margin: 0px 20px;
+	display: flex;
+	justify-content: center;
 `;
 
 const SignUpBtnText = styled.p`
@@ -203,6 +231,9 @@ const LoginPage = () => {
 	return (
 		<Body>
 			<Container>
+				<SignInBtn>
+					<SignInBtnText>Sign In</SignInBtnText>
+				</SignInBtn>
 				<GoogleBtn>
 					<Logo>G</Logo>
 					<GText>Continue with Google</GText>
