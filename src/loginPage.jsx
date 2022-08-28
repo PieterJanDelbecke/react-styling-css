@@ -55,7 +55,7 @@ const SignInBtnText = styled.p`
 
 	display: flex;
 	align-items: center;
-	justify-content:center;
+	justify-content: center;
 	letter-spacing: 0.1px;
 
 	color: #fff;
@@ -227,10 +227,35 @@ const SignUpBtnText = styled.p`
 	color: #a239ff;
 `;
 
+const EmailDiv = styled.div`
+	margin: 10px auto;
+	width: 344px;
+	display: flex;
+	flex-direction: column;
+`;
+
+const EmailLabel = styled.label`
+	width: 31px;
+	height: 16px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #757575;
+`;
+
+const EmailInput = styled.input`
+	width: 344px;
+	height: 40px;
+	border: solid 1px #d2d2d2;
+`;
+
 const LoginPage = () => {
 	return (
 		<Body>
 			<Container>
+				<EmailDiv>
+					<EmailLabel htmlFor="email-input">Email</EmailLabel>
+					<EmailInput type="email" name="email-input" placeholder="   pieter@growmofo.com" />
+				</EmailDiv>
 				<SignInBtn>
 					<SignInBtnText>Sign In</SignInBtnText>
 				</SignInBtn>
