@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 
 const Body = styled.div`
 	height: 100vh;
@@ -60,12 +61,10 @@ const SignInBtnText = styled.p`
 
 	color: #fff;
 `;
-const GoogleBtn = styled.button`
+const StyledButton = styled.button`
 	width: 344px;
 	height: 48px;
-	background: #ffffff;
 	border-radius: 100px;
-	border: 1px solid #757575;
 	margin: 12px auto;
 
 	box-sizing: border-box;
@@ -74,48 +73,31 @@ const GoogleBtn = styled.button`
 	justify-content: space-between;
 	align-items: center;
 	padding: 13px 64px 11px 48px;
-`;
 
-const FbBtn = styled.button`
-	width: 344px;
-	height: 48px;
-	border-radius: 100px;
-	border: 1px solid #1877f2;
-	background: #1877f2;
-	margin: 12px auto;
-
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 13px 64px 11px 48px;
-	gap: 4px;
-`;
-const TwitterBtn = styled.button`
-	width: 344px;
-	height: 48px;
-	border-radius: 100px;
-	background: #1b97f0;
-	margin: 12px auto;
-
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 13px 64px 11px 48px;
-	gap: 4px;
-`;
-
-const LinkedInBtn = styled.button`
-	width: 344px;
-	height: 48px;
-	border-radius: 100px;
-	border: 1px solid #256cc2;
-	margin: 12px auto;
-
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 13px 64px 11px 48px;
-	gap: 4px;
+	${(props) =>
+		props.google &&
+		css`
+			background: #ffffff;
+			border: 1px solid #757575;
+		`}
+	${(props) =>
+		props.fb &&
+		css`
+			border: 1px solid #1877f2;
+			background: #1877f2;
+		`}
+	${(props) =>
+		props.twitter &&
+		css`
+			border: 1px solid #1b97f0;
+			background: #1b97f0;
+		`}
+	${(props) =>
+		props.linkedin &&
+		css`
+			background: #ffffff;
+			border: 1px solid #256cc2;
+		`}
 `;
 
 const Logo = styled.p``;
@@ -259,22 +241,22 @@ const LoginPage = () => {
 				<SignInBtn>
 					<SignInBtnText>Sign In</SignInBtnText>
 				</SignInBtn>
-				<GoogleBtn>
+				<StyledButton google>
 					<Logo>G</Logo>
 					<GText>Continue with Google</GText>
-				</GoogleBtn>
-				<FbBtn>
+				</StyledButton>
+				<StyledButton fb>
 					<Logo>F</Logo>
 					<FbText>Continue with Facebook</FbText>
-				</FbBtn>
-				<TwitterBtn>
+				</StyledButton>
+				<StyledButton twitter>
 					<Logo>T</Logo>
 					<TwText>Continue with Twitter</TwText>
-				</TwitterBtn>
-				<LinkedInBtn>
+				</StyledButton>
+				<StyledButton linkedin>
 					<Logo>L</Logo>
 					<LiText>Continue with LinkedIn</LiText>
-				</LinkedInBtn>
+				</StyledButton>
 				<Hr />
 				<AccountDiv>
 					<AccountText>don't have an account?</AccountText>
