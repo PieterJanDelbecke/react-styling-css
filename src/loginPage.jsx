@@ -74,6 +74,7 @@ const StyledButton = styled.button`
 	align-items: center;
 	padding: 13px 64px 11px 48px;
 
+
 	${(props) =>
 		props.google &&
 		css`
@@ -209,35 +210,43 @@ const SignUpBtnText = styled.p`
 	color: #a239ff;
 `;
 
-const EmailDiv = styled.div`
+const InputDiv = styled.div`
 	margin: 10px auto;
 	width: 344px;
 	display: flex;
 	flex-direction: column;
 `;
 
-const EmailLabel = styled.label`
+const InputLabel = styled.label`
 	width: 31px;
 	height: 16px;
 	font-size: 12px;
 	line-height: 16px;
 	color: #757575;
-`;
+	`;
 
-const EmailInput = styled.input`
+const InputInput = styled.input`
 	width: 344px;
 	height: 40px;
 	border: solid 1px #d2d2d2;
-`;
+
+	&::placeholder{
+		padding-left: 1rem;
+	}
+	`;
 
 const LoginPage = () => {
 	return (
 		<Body>
 			<Container>
-				<EmailDiv>
-					<EmailLabel htmlFor="email-input">Email</EmailLabel>
-					<EmailInput type="email" name="email-input" placeholder="   pieter@growmofo.com" />
-				</EmailDiv>
+				<InputDiv>
+					<InputLabel htmlFor="email-input">Email</InputLabel>
+					<InputInput type="email" name="email-input" placeholder="pieter@growmofo.com" />
+				</InputDiv>
+				<InputDiv>
+					<InputLabel htmlFor="password-input">Password</InputLabel>
+					<InputInput type="password" name="email-input" placeholder="****" />
+				</InputDiv>
 				<SignInBtn>
 					<SignInBtnText>Sign In</SignInBtnText>
 				</SignInBtn>
