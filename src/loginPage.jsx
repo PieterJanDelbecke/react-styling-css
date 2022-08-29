@@ -33,17 +33,18 @@ const Container = styled.div`
 const SignInBtn = styled.button`
 	width: 344px;
 	height: 48px;
-	background: #a239ff;
-	border-radius: 100px;
-	border: 1px solid #a239ff;
 	margin: 12px auto;
 	box-sizing: border-box;
+	border-radius: 100px;
 
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	padding: 13px 64px 11px 48px;
+
+	background: #a239ff;
+	border: 1px solid #a239ff;
 `;
 
 const SignInBtnText = styled.p`
@@ -74,7 +75,6 @@ const StyledButton = styled.button`
 	align-items: center;
 	padding: 13px 64px 11px 48px;
 
-
 	${(props) =>
 		props.google &&
 		css`
@@ -94,16 +94,23 @@ const StyledButton = styled.button`
 			background: #1b97f0;
 		`}
 	${(props) =>
-		props.linkedin &&
+		props.linkedIn &&
 		css`
 			background: #ffffff;
 			border: 1px solid #256cc2;
+		`}
+	${(props) =>
+		props.signin &&
+		css`
+			background: #a239ff;
+			border: 1px solid #a239ff;
+			justify-content: center;
 		`}
 `;
 
 const Logo = styled.p``;
 
-const GText = styled.p`
+const BtnText = styled.p`
 	width: 184px;
 	height: 20px;
 
@@ -115,50 +122,26 @@ const GText = styled.p`
 	align-items: center;
 	letter-spacing: 0.1px;
 
-	color: #757575;
-`;
-const FbText = styled.p`
-	width: 184px;
-	height: 20px;
-
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
-
-	display: flex;
-	align-items: center;
-	letter-spacing: 0.1px;
-
-	color: #fff;
-`;
-const TwText = styled.p`
-	width: 184px;
-	height: 20px;
-
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
-
-	display: flex;
-	align-items: center;
-	letter-spacing: 0.1px;
-
-	color: #fff;
-`;
-
-const LiText = styled.p`
-	width: 184px;
-	height: 20px;
-
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
-
-	display: flex;
-	align-items: center;
-	letter-spacing: 0.1px;
-
-	color: #256cc2;
+	${(props) =>
+		props.google &&
+		css`
+			color: #757575;
+		`}
+	${(props) =>
+		props.fb &&
+		css`
+			color: #fff;
+		`}
+	${(props) =>
+		props.twitter &&
+		css`
+			color: #fff;
+		`}
+	${(props) =>
+		props.linkedIn &&
+		css`
+			color: #256cc2;
+		`}
 `;
 
 const Hr = styled.hr`
@@ -223,22 +206,43 @@ const InputLabel = styled.label`
 	font-size: 12px;
 	line-height: 16px;
 	color: #757575;
-	`;
+`;
 
 const InputInput = styled.input`
 	width: 344px;
 	height: 40px;
 	border: solid 1px #d2d2d2;
 
-	&::placeholder{
+	&::placeholder {
 		padding-left: 1rem;
 	}
-	`;
+`;
+
+const Paragraph = styled.p`
+	margin: 12px auto;
+	width: 344px;
+	color: #a239ff;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 16px;
+`;
+
+const Title = styled.h1`
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 24px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #757575;
+	margin: 12px auto;
+	width: 244px;
+`;
 
 const LoginPage = () => {
 	return (
 		<Body>
 			<Container>
+				<Title>sign in to growmetrics</Title>
 				<InputDiv>
 					<InputLabel htmlFor="email-input">Email</InputLabel>
 					<InputInput type="email" name="email-input" placeholder="pieter@growmofo.com" />
@@ -247,24 +251,25 @@ const LoginPage = () => {
 					<InputLabel htmlFor="password-input">Password</InputLabel>
 					<InputInput type="password" name="email-input" placeholder="****" />
 				</InputDiv>
-				<SignInBtn>
+				<Paragraph>Forgot password?</Paragraph>
+				<StyledButton signin>
 					<SignInBtnText>Sign In</SignInBtnText>
-				</SignInBtn>
+				</StyledButton>
 				<StyledButton google>
 					<Logo>G</Logo>
-					<GText>Continue with Google</GText>
+					<BtnText google>Continue with Google</BtnText>
 				</StyledButton>
 				<StyledButton fb>
 					<Logo>F</Logo>
-					<FbText>Continue with Facebook</FbText>
+					<BtnText fb>Continue with Facebook</BtnText>
 				</StyledButton>
 				<StyledButton twitter>
 					<Logo>T</Logo>
-					<TwText>Continue with Twitter</TwText>
+					<BtnText twitter>Continue with Twitter</BtnText>
 				</StyledButton>
-				<StyledButton linkedin>
+				<StyledButton linkedIn>
 					<Logo>L</Logo>
-					<LiText>Continue with LinkedIn</LiText>
+					<BtnText linkedIn>Continue with LinkedIn</BtnText>
 				</StyledButton>
 				<Hr />
 				<AccountDiv>
