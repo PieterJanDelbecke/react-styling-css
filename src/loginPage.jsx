@@ -19,32 +19,16 @@ const Container = styled.div`
 	border-radius: 4px;
 `;
 
-// const SignInBtn = styled.button`
-// 	width: 344px;
-// 	height: 48px;
-// 	background: #a239ff;
-// 	border-radius: 100px;
-// 	border: 1px solid #a239ff;
-// 	margin: 12px auto;
-// 	box-sizing: border-box;
-// 	color: #fff;
-// `;
-
-const SignInBtn = styled.button`
-	width: 344px;
+const GmLogo = styled.button`
+	width: 208px;
 	height: 48px;
-	margin: 12px auto;
-	box-sizing: border-box;
+	background: #f8f2ff;
 	border-radius: 100px;
-
+	border: 1px solid #f8f2ff;
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	padding: 13px 64px 11px 48px;
-
-	background: #a239ff;
-	border: 1px solid #a239ff;
+	margin: 34px auto;
+	box-sizing: border-box;
+	color: #ab78f7;
 `;
 
 const SignInBtnText = styled.p`
@@ -66,7 +50,7 @@ const StyledButton = styled.button`
 	width: 344px;
 	height: 48px;
 	border-radius: 100px;
-	margin: 12px auto;
+	margin: 20px auto;
 
 	box-sizing: border-box;
 	display: flex;
@@ -75,6 +59,14 @@ const StyledButton = styled.button`
 	align-items: center;
 	padding: 13px 64px 11px 48px;
 
+	${(props) =>
+		props.signin &&
+		css`
+			background: #a239ff;
+			border: 1px solid #a239ff;
+			justify-content: center;
+			margin: 32px auto;
+		`}
 	${(props) =>
 		props.google &&
 		css`
@@ -98,13 +90,6 @@ const StyledButton = styled.button`
 		css`
 			background: #ffffff;
 			border: 1px solid #256cc2;
-		`}
-	${(props) =>
-		props.signin &&
-		css`
-			background: #a239ff;
-			border: 1px solid #a239ff;
-			justify-content: center;
 		`}
 `;
 
@@ -144,9 +129,14 @@ const BtnText = styled.p`
 		`}
 `;
 
-const Hr = styled.hr`
+const HrBig = styled.hr`
 	margin: 30px;
 	width: 90%;
+`;
+
+const HrSmall = styled.hr`
+	width: 344px;
+	margin: 0 auto 30px;
 `;
 
 const AccountDiv = styled.div`
@@ -194,7 +184,7 @@ const SignUpBtnText = styled.p`
 `;
 
 const InputDiv = styled.div`
-	margin: 10px auto;
+	margin: 12px auto;
 	width: 344px;
 	display: flex;
 	flex-direction: column;
@@ -234,7 +224,7 @@ const Title = styled.h1`
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	color: #757575;
-	margin: 12px auto;
+	margin: 6px auto 12px;
 	width: 244px;
 `;
 
@@ -242,6 +232,7 @@ const LoginPage = () => {
 	return (
 		<Body>
 			<Container>
+				<GmLogo></GmLogo>
 				<Title>sign in to growmetrics</Title>
 				<InputDiv>
 					<InputLabel htmlFor="email-input">Email</InputLabel>
@@ -255,6 +246,7 @@ const LoginPage = () => {
 				<StyledButton signin>
 					<SignInBtnText>Sign In</SignInBtnText>
 				</StyledButton>
+				<HrSmall />
 				<StyledButton google>
 					<Logo>G</Logo>
 					<BtnText google>Continue with Google</BtnText>
@@ -271,7 +263,7 @@ const LoginPage = () => {
 					<Logo>L</Logo>
 					<BtnText linkedIn>Continue with LinkedIn</BtnText>
 				</StyledButton>
-				<Hr />
+				<HrBig />
 				<AccountDiv>
 					<AccountText>don't have an account?</AccountText>
 					<SignUpBtn>
